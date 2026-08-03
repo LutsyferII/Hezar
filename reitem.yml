@@ -1,0 +1,6 @@
+
+
+reitems:
+  first:
+    from: "mmoitem{type=MATERIAL;id=CUCOIN} 64"
+    to: "mmoitem{type=MATERIAL;id=SILCERCOIN} 1"

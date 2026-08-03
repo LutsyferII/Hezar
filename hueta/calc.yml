@@ -1,0 +1,26 @@
+damage:
+  player: 3.0
+
+
+
+stats:
+  Броня:
+    helmet: 15
+    chestplate: 40
+    leggings: 30
+    boots: 15
+  hp: 
+    helmet: 20
+    chestplate: 30
+    leggings: 35
+    boots: 15
+  Осн.Стат: 
+    helmet: 30
+    chestplate: 15
+    leggings: 20
+    boots: 35
+  Доп.Стат: 
+    helmet: 35
+    chestplate: 20
+    leggings: 15
+    boots: 30

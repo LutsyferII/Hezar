@@ -1,0 +1,42 @@
+first:
+  id: 1 #ZARJ_TOCH_ID
+  chance: 100 #base chance
+  decr: 5 #уменьшение шанса с повышением уровня
+  down: true
+  broke_in_null: false
+  broke_in_fall: false
+  min: 0
+  max: 5
+  stats:
+    first:
+      name: Уровень Атаки
+      type: ATTACK_DAMAGE
+      preval: 1.0
+      preperlvl: 10
+      value: 1.0
+      perlevel: 10 #Увеличение значяения в % по уровню точки
+  to:
+    - 'SWORD.ISK_SWORD'
+    - 'SWORD.PERV_SL'
+    - 'SWORD.WOLF_SWORD'
+second:
+  id: 2 #ZARJ_TOCH_ID
+  chance: 75 #base chance
+  decr: 10 #уменьшение шанса с повышением уровня
+  down: true
+  broke_in_null: false
+  broke_in_fall: false
+  min: 5
+  max: 10
+  stats:
+    first:
+      name: Уровень Атаки
+      type: ATTACK_DAMAGE
+      preval: 1.0
+      preperlvl: 10
+      value: 1.0
+      perlevel: 20 #Увеличение значяения в % по уровню точки
+  to:
+    - 'SWORD.ISK_SWORD'
+    - 'SWORD.PERV_SL'
+    - 'SWORD.WOLF_SWORD'

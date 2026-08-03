@@ -1,0 +1,39 @@
+first:
+  Block: TEST_BLOCK_1
+  MyId: 1
+  SelfDrop: true
+  OnlyRegenDrop: false
+  NeedPower: false
+  PowertoBreak: 20 #ZARJ_PICKAXE_POWER
+  Regen:
+    first:
+      world: world
+      amount: 3
+      timer: 2000
+      locations:
+        - "421,85,79"
+        - "421,85,83"
+        - "421,85,87"
+        - "421,85,91"
+        - "425,85,91"
+  SubTags:
+    first:
+      name: east
+      value: "false"
+    sec:
+      name: south
+      value: "false"
+    tr:
+      name: north
+      value: "false"
+    f:
+      name: west
+      value: "false"
+    fy:
+      name: up
+      value: "false"
+    six:
+      name: down
+      value: "false"
+  Drop:
+    - "MATERIAL CUCOIN 15-40 50"

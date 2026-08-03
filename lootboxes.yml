@@ -1,0 +1,4 @@
+first:
+  items:
+  - vanilla{id=DIAMOND} 2-5 90
+  - mmoitem{type=MATERIAL;id=MENTULA_RAW} 1-2 10

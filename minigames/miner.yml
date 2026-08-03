@@ -1,0 +1,7 @@
+first:
+  size: 4
+  mines: 8
+  time: 1800
+  name: "название"
+  lore: "хуета"
+  

@@ -1,0 +1,59 @@
+magaz:
+  name: "hueta"
+  npc: 12
+  sdelki:
+    page_1:
+      first:
+        price: 0.0
+        money: 0.0
+        from: "mmoitem{t=MATERIAL;id=GOLDCOIN} 1"
+        to: "mmoitem{type=MATERIAL;id=SILCERCOIN} 64"
+      two:
+        from: "mmoitem{type=MATERIAL;id=SILCERCOIN} 64"
+        to: "mmoitem{t=MATERIAL;id=GOLDCOIN} 1"
+      tr:
+        from: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+        to: "mmoitem{type=MATERIAL;id=CUCOIN} 64"
+      fr:
+        from: "mmoitem{type=MATERIAL;id=CUCOIN} 64"
+        to: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+      fer:
+        from: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+        to: "vanilla{id=BREAD} 8"
+      fera:
+        from: "vanilla{id=BREAD} 16"
+        to: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+      fer1:
+        from: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+        to: "vanilla{id=BREAD} 8"
+      fera1:
+        from: "vanilla{id=BREAD} 16"
+        to: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+      fer2:
+        from: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+        to: "vanilla{id=BREAD} 8"
+      fera2:
+        from: "vanilla{id=BREAD} 16"
+        to: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+      fer3:
+        from: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+        to: "vanilla{id=BREAD} 8"
+      fera3:
+        from: "vanilla{id=BREAD} 16"
+        to: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+      fer4:
+        from: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+        to: "vanilla{id=BREAD} 8"
+      fera4:
+        from: "vanilla{id=BREAD} 16"
+        to: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+      fer5:
+        from: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+        to: "vanilla{id=BREAD} 8"
+      fera5:
+        from: "vanilla{id=BREAD} 16"
+        to: "mmoitem{t=MATERIAL;id=SILCERCOIN} 1"
+      
+
+
+

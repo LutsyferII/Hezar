@@ -1,0 +1,8 @@
+world:
+  world:
+    - 'sethome'
+    - 'tp'
+region:
+  world:
+    first_world:
+    - 'sethome'

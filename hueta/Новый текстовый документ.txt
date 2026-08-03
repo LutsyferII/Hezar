@@ -1,0 +1,40 @@
+public static void calcStat(CommandSender sender,Double full_armor, int type) {
+		List<int[]> arrayList = new ArrayList<int[]>();
+		arrayList.add(new int[]{15,40,30,15});
+		arrayList.add(new int[]{20,30,35,15});
+		arrayList.add(new int[]{30,15,20,35});
+		arrayList.add(new int[]{35,20,15,30});
+		List<String> string_list = new ArrayList<>();
+		string_list.add("Броня");
+		string_list.add("HP");
+		string_list.add("Основной стат");
+		string_list.add("Доп стат");
+		Double pr_arm = full_armor / 100;
+		Double arm_helmet = pr_arm * arrayList.get(type)[0];
+		Double arm_chest = pr_arm * arrayList.get(type)[1];
+		Double arm_leggings = pr_arm * arrayList.get(type)[2];
+		Double arm_boots = pr_arm * arrayList.get(type)[3];
+		sender.sendMessage("§2-----------------------------------------------------");
+		sender.sendMessage("§2 "+string_list.get(type)+" шлема = "+arm_helmet+" \n "+string_list.get(type)+" нагрудника = "+arm_chest+"\n "+string_list.get(type)+" понож = "+arm_leggings+"\n "+string_list.get(type)+" обуви = "+arm_boots);
+		sender.sendMessage("§2-----------------------------------------------------");
+		
+		
+	}
+	public static void getStats(CommandSender sender,List<Double> d_list) {
+		 //0 - Броня. 1 - Хп. 2 - Осн стат. 3 - доп стат.
+		if(d_list.size()>0) {
+			calcStat(sender,d_list.get(0), 0);
+			
+			if(d_list.size()>1) {
+				calcStat(sender,d_list.get(1), 1);
+				
+				if(d_list.size()>2) {
+					calcStat(sender,d_list.get(2), 2);
+					if(d_list.size()>3) {
+						calcStat(sender,d_list.get(3), 3);
+					}
+					
+				}
+			}
+		}
+	}

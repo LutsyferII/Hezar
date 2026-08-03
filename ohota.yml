@@ -1,0 +1,47 @@
+kaban:
+  mob: kaban
+  mechanics:
+    first_her:
+      profession: "main"
+      podmech:
+        first:
+          level: 2
+          drop:
+            - mmoitem{type=MATERIAL;id=CUCOIN} 5-20 30
+        second:
+          level: 5
+          drop:
+            - mmoitem{type=MATERIAL;id=CUCOIN} 10-30 40
+        tre:
+          level: 10
+          drop:
+            - mmoitem{type=MATERIAL;id=CUCOIN} 15-40 50
+      perlevel:
+        first:
+          counton: 1 #  nearest of newamount = amount + (amount/100)*(counton*level)
+          chanceon: 1 # newchance = chance + (chance/100)*(chanceon*level)
+          drop:
+            - mmoitem{type=MATERIAL;id=CUCOIN} 15-40 50
+    second_huecond:
+      profession: "ohota"
+      podmech:
+        first:
+          level: 50
+          drop:
+            - mmoitem{type=GEM_STONE;id=GEM_RED_1} 1 70
+
+raccoon:
+  mob: raccoon
+  mechanics:
+    first_her:
+      profession: "ohota"
+      podmech:
+        first:
+          level: 2
+          drop:
+            - mmoitem{type=MATERIAL;id=CUCOIN} 5-20 30
+    second_huecond:
+      podmech:
+        first:
+          level: 50
+          drop:

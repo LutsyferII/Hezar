@@ -1,0 +1,17 @@
+
+messages:
+  potions:
+    started: '&fВы получили эффект &5{name}&f на &5{duration}&f сек.'
+    ended: '&fДействие эффекта &5{name}&f закончилось.'
+
+settings:
+  blow_blocks: false
+  enable: true
+  debug: true
+  huy: 'пизда, че'
+  doublehands:
+    type: "DAGGER"
+    divisor: 2.0
+  block_world_white:
+  - world
+  - act-2

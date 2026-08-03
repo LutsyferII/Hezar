@@ -1,0 +1,30 @@
+name: Hezar
+main: main.hezar
+description: ''
+version: 0.2.1
+website: hezar.net
+author: Zarj
+depend: [MMOCore,MMOItems,MythicMobs,MythicLib]
+api-version: 1.18
+
+commands:
+  hezar:
+    description: Main command of the plugin.
+    permission: hezar.admin
+    usage: /hezar
+    aliases: [hz]
+  convert:
+    description: Convert coins.
+    permission: hezar.convert
+    usage: /convert
+    aliases: [conv]
+  zblocks:
+    description: Work with blocks
+    permission: hezar.zblocks
+    usage: /zblocks
+    aliases: [zb]
+  zbackpack:
+    description: Work with backpacks
+    permission: hezar.zbackpack
+    usage: /zbackpack
+    aliases: [zbp]

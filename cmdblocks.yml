@@ -1,0 +1,4 @@
+test:
+  loc: 'act-2:317,112,-212'
+  cmd: 'mvtp %player% e:lobby:-8,230,-108'
+  asconsole: true
