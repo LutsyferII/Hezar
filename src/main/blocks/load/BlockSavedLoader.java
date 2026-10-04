@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -20,9 +21,11 @@ import Configs.Errors;
 import main.Settings;
 import main.hezar;
 import main.blocks.BlockZarj;
+import org.bukkit.util.Vector;
 
 public class BlockSavedLoader {
 	static Map<Integer,List<String>> locs_s = new HashMap<>();
+    public static final Map<String, BlockHolder> pendingBlocks = new ConcurrentHashMap<>();
 	public static void load() {
 		File folder = new File(hezar.inst.getDataFolder(),"blocks_saved");
 		for(File saved_block : folder.listFiles()) {
@@ -84,10 +87,6 @@ public class BlockSavedLoader {
         	}
         	int totalLocs = locs.size();
         	
-        	Bukkit.getScheduler().runTaskAsynchronously(hezar.inst, () -> {
-        		
-        	});
-        	
         	for (int i = 0; i < totalLocs; i += chunkSize) {
                 final int start = i;
                 final int end = Math.min(i + chunkSize, totalLocs-1);
@@ -95,6 +94,7 @@ public class BlockSavedLoader {
 
                 List<String> locsString = locs.subList(start, end);
                 Bukkit.getScheduler().runTaskAsynchronously(hezar.inst, () -> {
+
                     ChunkedBlockLoader task = prepareLocs(start,chunkSize,totalLocs,locsString,zb);
                     Bukkit.getScheduler().runTask(hezar.inst, task);
                 });
@@ -115,7 +115,15 @@ public class BlockSavedLoader {
                     Integer.parseInt(cords[0]), // x-координата
                     Integer.parseInt(cords[1]), // y-координата
                     Integer.parseInt(cords[2])); // z-координата
-            locsReal.add(locObj);
+            if(locObj.getWorld() != null){
+                locsReal.add(locObj);
+            }else{
+                Vector vec = locObj.toVector();
+                if(!pendingBlocks.containsKey(temparr[0])){
+                    pendingBlocks.put(temparr[0],new BlockHolder(zb.getMyId()));
+                }
+                pendingBlocks.get(temparr[0]).addVector(vec);
+            }
         }
         ChunkedBlockLoader task = new ChunkedBlockLoader(locsReal, zb);
     	return task;
@@ -157,26 +165,4 @@ public class BlockSavedLoader {
     	executor.shutdown();
 	}
 
-    private static class ChunkedBlockLoader implements Runnable {
-        private final Collection<Location> locs;
-        private final BlockZarj block;
-
-        public ChunkedBlockLoader(Collection<Location> locs,  BlockZarj bl) {
-            this.locs = locs;
-            block = bl;
-        }
-
-        @Override
-        public void run() {
-        	for(Location loc : locs) {
-                Block block_vanilla = loc.getBlock();
-                if (block_vanilla.getType() != block.getItemBlock().getType()) {
-                    if (block.getBD() != null) {
-                    	block_vanilla.setBlockData(block.getBD());
-                    }
-                }
-                block_vanilla.setMetadata("ZARJ_BLOCK_ID", block.meta_value);
-        	}
-        }
-    }
 }
