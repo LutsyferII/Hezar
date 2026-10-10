@@ -122,11 +122,8 @@ public class BlockSavedLoader {
                 locsReal.add(locObj);
             }else{
                 Vector vec = locObj.toVector();
-                if(!pendingBlocks.containsKey(temparr[0])){
-                    pendingBlocks.put(temparr[0],new BlockHolder()).put(my_id,vec);
-                }else{
-                    pendingBlocks.get(temparr[0]).put(my_id,vec);
-                }
+                BlockHolder holder = pendingBlocks.computeIfAbsent(temparr[0], k -> new BlockHolder());
+                holder.put(my_id, vec);
             }
         }
         ChunkedBlockLoader task = new ChunkedBlockLoader(locsReal, zb);

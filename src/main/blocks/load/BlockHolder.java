@@ -16,14 +16,14 @@ public class BlockHolder {
     public boolean conatins(Integer id){
         return id_vecs.containsKey(id);
     }
-    public boolean put(Integer id, Vector vec){
+    public synchronized void  put(Integer id, Vector vec){
         if(id_vecs.containsKey(id)){
             id_vecs.get(id).add(vec);
-            return true;
         }else{
-            List<Vector> vecs = id_vecs.put(id, new ArrayList<Vector>());
+            List<Vector> vecs = new ArrayList<>();
             vecs.add(vec);
-            return false;
+            id_vecs.put(id, vecs);
+
         }
     }
 
