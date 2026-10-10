@@ -3,25 +3,28 @@ package main.blocks.load;
 import org.bukkit.util.Vector;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BlockHolder {
-    int block_id;
-    List<Vector> vecs = new ArrayList<>();
+    Map<Integer,List<Vector>> id_vecs = new HashMap<>();
 
-    public BlockHolder(int id){
-        block_id=id;
+
+    public BlockHolder(){
     }
-    public void addVector(Vector vec){
-        vecs.add(vec);
+    public boolean conatins(Integer id){
+        return id_vecs.containsKey(id);
     }
-    public List<Vector> getVecs(){
-        return vecs;
+    public boolean put(Integer id, Vector vec){
+        if(id_vecs.containsKey(id)){
+            id_vecs.get(id).add(vec);
+            return true;
+        }else{
+            List<Vector> vecs = id_vecs.put(id, new ArrayList<Vector>());
+            vecs.add(vec);
+            return false;
+        }
     }
-    public boolean validId(int test_id){
-        return (test_id == block_id);
-    }
-    public int getId(){
-        return block_id;
-    }
+
 }

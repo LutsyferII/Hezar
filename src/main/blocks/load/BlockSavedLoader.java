@@ -106,8 +106,11 @@ public class BlockSavedLoader {
         //executor.shutdown();
     }
 	static ChunkedBlockLoader prepareLocs(int i, int chunkSize, int totalLocs, List<String> locs, BlockZarj zb){
-		
+		int my_id = zb.getMyId();
         List<Location> locsReal = new ArrayList<>();
+
+
+
         for(String locString : locs) {
     		String[] temparr = locString.split(":");
             String[] cords = temparr[1].split(",");
@@ -120,9 +123,10 @@ public class BlockSavedLoader {
             }else{
                 Vector vec = locObj.toVector();
                 if(!pendingBlocks.containsKey(temparr[0])){
-                    pendingBlocks.put(temparr[0],new BlockHolder(zb.getMyId()));
+                    pendingBlocks.put(temparr[0],new BlockHolder()).put(my_id,vec);
+                }else{
+                    pendingBlocks.get(temparr[0]).put(my_id,vec);
                 }
-                pendingBlocks.get(temparr[0]).addVector(vec);
             }
         }
         ChunkedBlockLoader task = new ChunkedBlockLoader(locsReal, zb);
